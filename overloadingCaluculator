@@ -1,0 +1,132 @@
+using System;
+namespace calculatorOverloading
+{
+    public class Addition
+    {
+        public int addition(int a, int b)
+        {
+            int sum = a + b;
+            return sum;
+        }
+
+        public int addition(int a, int b, int c)
+        {
+            int sum = a + b + c;
+            return sum;
+        }
+        public int addition(int a, int b, int c, int d)
+        {
+            int sum = a + b + c + d;
+            return sum;
+        }
+    }
+    public class Subtraction
+    {
+        public int subtraction(int a, int b)
+        {
+            int sub = a - b;
+            return sub;
+        }
+
+        public int subtraction(int a, int b, int c)
+        {
+            int sub = a - b - c;
+            return sub;
+        }
+        public int subtraction(int a, int b, int c, int d)
+        {
+            int sub = a - b - c - d;
+            return sub;
+        }
+    }
+    class Program
+    { 
+        static void Main(string[] args)
+        {
+            Addition add = new Addition();
+            Subtraction sub = new Subtraction();
+            Console.WriteLine("enter 1 for addition\nenter 2 for subtraction");
+            int numbers = int.Parse(Console.ReadLine());
+            switch (numbers)
+            {
+                case 1:
+                    Console.WriteLine("how many number you want to enter: ");
+                    int num1 = int.Parse(Console.ReadLine());
+                    if (num1==2)
+                    {
+                        Console.Write("enter first number : ");
+                        int a = int.Parse(Console.ReadLine());
+                        Console.Write("enter second number : ");
+                        int b = int.Parse(Console.ReadLine());
+                        int x=add.addition(a, b);
+                        Console.WriteLine("sum of two numbrs is: "+x);
+                    }
+                    else if(num1==3)
+                    {
+                        Console.Write("enter first number : ");
+                        int a = int.Parse(Console.ReadLine());
+                        Console.Write("enter second number : ");
+                        int b = int.Parse(Console.ReadLine());
+                        Console.Write("enter third number : ");
+                        int c = int.Parse(Console.ReadLine());
+                        int x = add.addition(a, b,c);
+                        Console.WriteLine("sum of three numbrs is: " + x);
+                    }
+                    else if (num1 == 4)
+                    {
+                        Console.Write("enter first number : ");
+                        int a = int.Parse(Console.ReadLine());
+                        Console.Write("enter second number : ");
+                        int b = int.Parse(Console.ReadLine());
+                        Console.Write("enter third number : ");
+                        int c = int.Parse(Console.ReadLine());
+                        Console.Write("enter fourth number : ");
+                        int d = int.Parse(Console.ReadLine());
+                        int x = add.addition(a, b, c,d);
+                        Console.WriteLine("sum of four numbrs is: " + x);
+                    }
+                    break;
+                case 2:
+                    Console.WriteLine("how many number you want to enter: ");
+                    int num2 = int.Parse(Console.ReadLine());
+                    if (num2 == 2)
+                    {
+                        Console.Write("enter first number : ");
+                        int a = int.Parse(Console.ReadLine());
+                        Console.Write("enter second number : ");
+                        int b = int.Parse(Console.ReadLine());
+                        int x = sub.subtraction(a, b);
+                        Console.WriteLine("sub of two numbrs is: " + x);
+                    }
+                    else if (num2 == 3)
+                    {
+                        Console.Write("enter first number : ");
+                        int a = int.Parse(Console.ReadLine());
+                        Console.Write("enter second number : ");
+                        int b = int.Parse(Console.ReadLine());
+                        Console.Write("enter third number : ");
+                        int c = int.Parse(Console.ReadLine());
+                        int x = sub.subtraction(a, b, c);
+                        Console.WriteLine("sub of three numbrs is: " + x);
+                    }
+                    else if (num2 == 4)
+                    {
+                        Console.Write("enter first number : ");
+                        int a = int.Parse(Console.ReadLine());
+                        Console.Write("enter second number : ");
+                        int b = int.Parse(Console.ReadLine());
+                        Console.Write("enter third number : ");
+                        int c = int.Parse(Console.ReadLine());
+                        Console.Write("enter fourth number : ");
+                        int d = int.Parse(Console.ReadLine());
+                        int x = sub.subtraction(a, b, c, d);
+                        Console.WriteLine("sub of four numbrs is: " + x);           
+                    }
+                    break;
+                default:
+                    Console.WriteLine("invalid input");
+                    break;
+            }
+        }
+    }
+}
